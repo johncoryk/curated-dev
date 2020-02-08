@@ -1,0 +1,254 @@
+$textColor: #2d3748;
+$boxColor: #38b2ac;
+$bgColor: #f7fafc;
+$hoverColor: #a0aec0;
+$cardText: #b2f5ea;
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 18px;
+  color: $textColor;
+  background-color: $bgColor;
+  line-height: 1.4;
+  font-family: merriweather, serif;
+}
+
+.container {
+  padding: 70px 120px;
+}
+
+.title-info {
+  margin-bottom: 4.5rem;
+}
+
+.main-title {
+  font-size: 6.5rem;
+  font-family: Merriweather, serif;
+}
+
+.main-sub-title {
+  font-size: 1.7rem;
+  font-family: Merriweather, serif;
+  margin: 0 auto 0 5px;
+}
+
+.highlight {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0) 50%,
+    $boxColor 50%
+  );
+  width: 70%;
+}
+
+.content-container {
+  display: grid;
+  grid-template-columns: 20% 80%;
+  grid-gap: 3rem;
+}
+
+.side-nav {
+  padding-top: 20px;
+
+  .nav-links {
+    display: grid;
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+
+    a {
+      padding-bottom: 6px;
+      text-decoration: none;
+      color: $textColor;
+      background: linear-gradient(to bottom, $boxColor 0%, $boxColor 100%);
+      background-position: 0 100%;
+      background-repeat: repeat-x;
+      background-size: 4px 4px;
+      transition: background-size 0.2s;
+
+      &:hover {
+        background-size: 4px 8px;
+      }
+    }
+  }
+}
+
+.cards-container-title {
+  font-family: Merriweather, serif;
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  grid-gap: 2rem;
+}
+
+.card {
+  background-color: $boxColor;
+  padding: 20px;
+  height: 17rem;
+  max-width: auto;
+  text-align: center;
+  transition: ease 400ms;
+  color: $cardText;
+  display: grid;
+  grid-template-rows: 1fr auto;
+
+  &:hover {
+    transform: scale(1.05);
+    transition: ease 300ms;
+    background-color: $textColor;
+    color: $hoverColor;
+    cursor: pointer;
+  }
+
+  h3 {
+    line-height: 1;
+    font-weight: normal;
+    font-size: 1.2rem;
+  }
+}
+
+.card:hover svg {
+  fill: $hoverColor;
+  transition: ease 200ms;
+  transform: rotate(80deg) scale(1.3);
+}
+
+#highlight-link {
+  color: $hoverColor;
+}
+
+svg {
+  fill: $cardText;
+  height: 100px;
+  width: 100px;
+  justify-self: center;
+  align-self: center;
+  transition: ease 300ms;
+}
+
+@media (max-width: 780px) {
+  .container {
+    padding: 40px;
+    max-width: 780px;
+    margin: 5px auto;
+  }
+
+  .title-info {
+    padding: 5px;
+    width: 90%;
+    margin: 0 auto 20px;
+  }
+
+  .main-title {
+    font-size: 4.6rem;
+  }
+
+  .content-container {
+    grid-gap: 1.5rem;
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 1rem;
+    padding: 0 20px;
+  }
+
+  .side-nav {
+    padding-top: 50px;
+  }
+}
+
+.footer {
+  text-align: left;
+  margin: 80px auto 0;
+  padding: 10px;
+}
+
+.footer-info {
+  display: grid;
+  grid-template-rows: auto;
+  grid-gap: 2rem;
+
+  a {
+    padding-bottom: 6px;
+    text-decoration: none;
+    color: $textColor;
+    background: linear-gradient(to bottom, $boxColor 0%, $boxColor 100%);
+    background-position: 0 100%;
+    background-repeat: repeat-x;
+    background-size: 4px 4px;
+    transition: background-size 0.2s;
+
+    &:hover {
+      background-size: 4px 8px;
+    }
+  }
+}
+
+@media (max-width: 420px) {
+  .container {
+    padding: 20px;
+    max-width: 420px;
+  }
+
+  .title-info {
+    text-align: center;
+    padding: 5px;
+    width: 90%;
+    margin: 0 auto 10px;
+  }
+
+  .main-title {
+    font-size: 3rem;
+  }
+
+  .main-sub-title {
+    font-size: 1.2rem;
+  }
+
+  .content-container {
+    display: grid;
+    grid-template-columns: none;
+    grid-template-rows: auto;
+    grid-gap: 2.2rem;
+  }
+
+  .side-nav {
+    padding-top: 10px;
+  }
+
+  .side-nav .nav-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 8px;
+    text-align: center;
+
+    div {
+      padding: 5px;
+    }
+  }
+
+  .cards-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 1.5rem;
+  }
+}
